@@ -20,10 +20,15 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  username: desafiomovie
+  password: 1234
+  database: practicaFin
 
 development:
   <<: *default
-  database: todo_list_development
+  username: desafiomovie
+  password: 1234
+  database: practicaFin
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +62,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: todo_list_test
+  username: desafiomovie
+  password: 1234
+  database: practicaFin
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +87,6 @@ test:
 #
 production:
   <<: *default
-  database: todo_list_production
-  username: todo_list
-  password: <%= ENV['TODO_LIST_DATABASE_PASSWORD'] %>
+  username: desafiomovie
+  password: 1234
+  database: practicaFin
