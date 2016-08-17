@@ -11,3 +11,9 @@ two:
   lastname: MyString2
   username: MyString2
   email: MyString2@ccc.com
+
+two:
+  name: MyString2
+  lastname: MyString3
+  username: MyString3
+  email: MyString3@ccc.com
