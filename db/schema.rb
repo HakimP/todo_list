@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160817004310) do
+ActiveRecord::Schema.define(version: 20160817014112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(version: 20160817004310) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "movies", force: :cascade do |t|
     t.string   "name"
@@ -56,6 +59,15 @@ ActiveRecord::Schema.define(version: 20160817004310) do
 
   add_index "tasks", ["list_id"], name: "index_tasks_on_list_id", using: :btree
 
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "lastname"
+    t.string   "username"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string   "nombre"
     t.integer  "edad"
@@ -67,6 +79,7 @@ ActiveRecord::Schema.define(version: 20160817004310) do
 
   add_index "usuarios", ["educacion_id"], name: "index_usuarios_on_educacion_id", using: :btree
 
+  add_foreign_key "lists", "users"
   add_foreign_key "rankings", "movies"
   add_foreign_key "tasks", "lists"
   add_foreign_key "usuarios", "educacions"

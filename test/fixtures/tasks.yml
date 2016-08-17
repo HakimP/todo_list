@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  note: MyText
+  title: MyString1
+  note: MyText1
   completed: false
   list_id: 
 
 two:
-  title: MyString
-  note: MyText
-  completed: false
+  title: MyString1
+  note: MyText1
+  completed: true
   list_id: 
